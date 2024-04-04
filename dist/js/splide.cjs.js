@@ -2,7 +2,7 @@
  * Splide.js
  * Version  : 4.1.4
  * License  : MIT
- * Copyright: 2022 Naotoshi Fujita
+ * Copyright: 2024 Naotoshi Fujita
  */
 'use strict';
 
@@ -70,7 +70,7 @@ function isNull(subject) {
 
 function isHTMLElement(subject) {
   try {
-    return subject instanceof (subject.ownerDocument.defaultView || window).HTMLElement;
+    return subject instanceof (subject.ownerDocument.defaultView || window).HTMLElement || subject instanceof window.top.HTMLElement;
   } catch (e) {
     return false;
   }

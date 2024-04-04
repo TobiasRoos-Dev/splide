@@ -38,7 +38,7 @@ function isNull(subject) {
 }
 function isHTMLElement(subject) {
   try {
-    return subject instanceof (subject.ownerDocument.defaultView || window).HTMLElement;
+    return subject instanceof (subject.ownerDocument.defaultView || window).HTMLElement || subject instanceof window.top.HTMLElement;
   } catch (e) {
     return false;
   }

@@ -6,7 +6,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * Splide.js
  * Version  : 4.1.4
  * License  : MIT
- * Copyright: 2022 Naotoshi Fujita
+ * Copyright: 2024 Naotoshi Fujita
  */
 var MEDIA_PREFERS_REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
 var CREATED = 1;
@@ -65,7 +65,7 @@ function isNull(subject) {
 
 function isHTMLElement(subject) {
   try {
-    return subject instanceof (subject.ownerDocument.defaultView || window).HTMLElement;
+    return subject instanceof (subject.ownerDocument.defaultView || window).HTMLElement || subject instanceof window.top.HTMLElement;
   } catch (e) {
     return false;
   }
